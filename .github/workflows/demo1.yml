@@ -3,6 +3,12 @@ on:
   pull_request:
     types: [opened, edited]
   workflow_dispatch:
+  push:
+    branches:
+      - main # main
+      - "dev-*" # dev-changes dev-migration-2
+      - "feat/**" # feat/hello feat/new/changes
+      # skipped `develop-1`
 jobs:
   deploy:
     runs-on: ubuntu-latest
