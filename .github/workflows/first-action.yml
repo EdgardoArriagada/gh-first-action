@@ -1,6 +1,6 @@
 name: First Workflow
 on: workflow_dispatch
-jobs: 
+jobs:
   first-job:
     runs-on: ubuntu-latest
     steps:
@@ -8,3 +8,7 @@ jobs:
         run: echo "Hello world"
       - name: Print goodbye
         run: echo "Done!"
+      - name: Output Github context
+        # https://docs.github.com/en/actions/learn-github-actions/contexts
+        # https://docs.github.com/en/actions/learn-github-actions/expressions
+        run: echo "${{ toJSON(github) }}"
